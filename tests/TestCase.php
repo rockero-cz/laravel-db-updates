@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Rockero\DatabaseUpdates\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Rockero\DatabaseUpdates\DatabaseUpdatesServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -12,25 +12,20 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+        File::getRequire(__DIR__.'/../database/migrations/create_database_updates_table.php.stub')->up();
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
-            SkeletonServiceProvider::class,
+            DatabaseUpdatesServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    protected function runUpdates(): void
     {
-        config()->set('database.default', 'testing');
-
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        $migration->up();
-        */
+        $this->artisan('db:update', [
+            '--realpath' => __DIR__.'/Fixtures',
+        ]);
     }
 }
