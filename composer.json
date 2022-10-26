@@ -50,7 +50,6 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
         }
     },
@@ -58,10 +57,7 @@
         "laravel": {
             "providers": [
                 "Rockero\\DatabaseUpdates\\DatabaseUpdatesServiceProvider"
-            ],
-            "aliases": {
-                "DatabaseUpdates": "Rockero\\DatabaseUpdates\\Facades\\DatabaseUpdates"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
