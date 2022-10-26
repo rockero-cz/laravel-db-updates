@@ -1,12 +1,12 @@
 {
-    "name": "rockero-cz/db-updates",
-    "description": "This is my package db-updates",
+    "name": "rockero-cz/laravel-db-updates",
+    "description": "This is my package laravel-db-updates",
     "keywords": [
         "rockero-cz",
         "laravel",
-        "db-updates"
+        "laravel-db-updates"
     ],
-    "homepage": "https://github.com/rockero-cz/db-updates",
+    "homepage": "https://github.com/rockero-cz/laravel-db-updates",
     "license": "MIT",
     "authors": [
         {

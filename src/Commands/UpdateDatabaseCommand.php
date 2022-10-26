@@ -63,7 +63,7 @@ class UpdateDatabaseCommand extends Command
     public function getPath()
     {
         return $this->input->hasOption('realpath') && $this->option('realpath')
-            ? database_path('updates')
-            : $this->option('realpath');
+            ? $this->option('realpath')
+            : database_path('updates');
     }
 }

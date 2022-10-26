@@ -1,16 +1,16 @@
-# Database updates
+# Laravel Database Updates
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/db-updates.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/db-updates)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rockero-cz/db-updates/run-tests?label=tests)](https://github.com/rockero-cz/db-updates/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/rockero-cz/db-updates/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/rockero-cz/db-updates/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/rockero-cz/db-updates.svg?style=flat-square)](https://packagist.org/packages/spatie/db-updates)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/rockero-cz/laravel-db-updates.svg?style=flat-square)](https://packagist.org/packages/rockero-cz/laravel-db-updates)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rockero-cz/laravel-db-updates/run-tests?label=tests)](https://github.com/rockero-cz/laravel-db-updates/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/rockero-cz/laravel-db-updates/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/rockero-cz/laravel-db-updates/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/rockero-cz/laravel-db-updates.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-db-updates)
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require rockero-cz/db-updates
+composer require rockero-cz/laravel-db-updates
 ```
 
 You can publish and run the migrations with:
