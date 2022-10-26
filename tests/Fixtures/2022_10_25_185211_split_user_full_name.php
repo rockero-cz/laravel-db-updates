@@ -6,7 +6,7 @@ return new class
 {
     public function __invoke()
     {
-        DB::table('names')->get()->each(function($item) {
+        DB::table('names')->get()->each(function ($item) {
             [$firstName, $lastName] = explode(' ', $item->full_name);
 
             DB::table('names')->update([

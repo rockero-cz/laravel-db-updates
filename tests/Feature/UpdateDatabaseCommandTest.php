@@ -2,10 +2,10 @@
 
 namespace Rockero\DatabaseUpdates\Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Rockero\DatabaseUpdates\Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UpdateDatabaseCommandTest extends TestCase
 {
