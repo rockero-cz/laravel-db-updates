@@ -12,10 +12,6 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        //exit;
-
-        // $dbPath = __DIR__.'/../database/testing_db.sqlite';
-        // exec("touch ${$dbPath}");
         File::getRequire(__DIR__.'/../database/migrations/create_database_updates_table.php.stub')->up();
     }
 
