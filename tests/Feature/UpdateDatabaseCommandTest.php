@@ -42,8 +42,8 @@ class UpdateDatabaseCommandTest extends TestCase
     /** @test */
     public function update_can_run_only_once(): void
     {
-        $this->markTestIncomplete();
         $this->runUpdates();
-        // dd(DB::table('database_updates')->get());
+        $this->runUpdates();
+        $this->assertDatabaseCount('database_updates', 1);
     }
 }
