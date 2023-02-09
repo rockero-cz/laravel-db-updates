@@ -4,8 +4,8 @@ namespace Rockero\DatabaseUpdates\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
-use Illuminate\Console\View\Components\Task;
 use Illuminate\Console\View\Components\Info;
+use Illuminate\Console\View\Components\Task;
 use Illuminate\Support\Benchmark;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -37,6 +37,7 @@ class UpdateDatabaseCommand extends Command
 
         if ($pendingUpdates->count() == 0) {
             $this->write(Info::class, 'Nothing to update.');
+
             return Command::SUCCESS;
         }
 
@@ -63,6 +64,7 @@ class UpdateDatabaseCommand extends Command
         if ($this->argument('file')) {
             $path = sprintf('%s/%s.php', $this->getPath(), $this->argument('file'));
             $file = new SplFileInfo($path);
+
             return [$file];
         } else {
             return File::files($this->getPath());
