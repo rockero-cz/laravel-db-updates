@@ -15,14 +15,15 @@ class UpdateDatabaseCommand extends Command
 {
     use ConfirmableTrait;
 
-    protected $events;
-
     protected $signature = 'db:update {file?}
         {--force : Force the operation to run when in production}
         {--realpath : Indicate any provided migration file paths are pre-resolved absolute paths}';
 
     protected $description = 'Run database updates';
 
+    /**
+     * Execute the console command.
+     */
     public function handle(): int
     {
         if (! $this->confirmToProceed()) {
@@ -52,6 +53,9 @@ class UpdateDatabaseCommand extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * Get the destination class path.
+     */
     public function getPath(): string
     {
         return $this->input->hasOption('realpath') && $this->option('realpath')
@@ -59,6 +63,9 @@ class UpdateDatabaseCommand extends Command
             : database_path('updates');
     }
 
+    /**
+     * Get database update files.
+     */
     public function getUpdateFiles(): array
     {
         if ($this->argument('file')) {
@@ -66,11 +73,14 @@ class UpdateDatabaseCommand extends Command
             $file = new SplFileInfo($path);
 
             return [$file];
-        } else {
-            return File::files($this->getPath());
         }
+
+        return File::files($this->getPath());
     }
 
+    /**
+     * Run the database update.
+     */
     protected function runUpdate(SplFileInfo $update): void
     {
         Benchmark::measure(function () use ($update) {
@@ -78,11 +88,14 @@ class UpdateDatabaseCommand extends Command
 
             DB::table('database_updates')->insert([
                 'file' => $update->getFilename(),
-                'executed_at' => now()->toDateTimeString(),
+                'executed_at' => now(),
             ]);
         });
     }
 
+    /**
+     * Write down a line.
+     */
     protected function write(string $component, ...$arguments): void
     {
         (new $component($this->output))->render(...$arguments);

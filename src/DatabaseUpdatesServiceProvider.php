@@ -11,11 +11,6 @@ class DatabaseUpdatesServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
             ->name('db-updates')
             ->hasMigration('create_database_updates_table')

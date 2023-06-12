@@ -8,11 +8,10 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('database_updates', function (Blueprint $table)
-        {
+        Schema::create('database_updates', function (Blueprint $table) {
             $table->id();
             $table->string('file');
-            $table->string('executed_at');
+            $table->dateTime('executed_at');
         });
     }
 
