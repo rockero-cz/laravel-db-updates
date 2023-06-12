@@ -2,7 +2,10 @@
 
 return new class
 {
-    public function __invoke()
+    /**
+     * Run the updates.
+     */
+    public function __invoke(): void
     {
         //
     }
