@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-beforeEach(function() {
+beforeEach(function () {
     Schema::create('names', function ($table) {
         $table->temporary();
         $table->string('full_name');
