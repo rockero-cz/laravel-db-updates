@@ -8,7 +8,7 @@ use Rockero\DatabaseUpdates\DatabaseUpdatesServiceProvider;
 
 class TestCase extends Orchestra
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -28,13 +28,6 @@ class TestCase extends Orchestra
         config()->set('database.connections.sqlite', [
             'driver' => 'sqlite',
             'database' => ':memory:',
-        ]);
-    }
-
-    protected function runUpdates(): void
-    {
-        $this->artisan('db:update', [
-            '--realpath' => __DIR__.'/Fixtures',
         ]);
     }
 }
