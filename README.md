@@ -96,7 +96,7 @@ public function __invoke(): void
 }
 ```
 
-You have made some refactor and you also renamed a state name, so you need to rename it in the database:
+You have made some refactoring and you also renamed a state name, so you need to rename it in the database:
 
 ```php
 /**
