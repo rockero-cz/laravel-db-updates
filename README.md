@@ -78,7 +78,7 @@ public function __invoke(): void
 }
 ```
 
-Your production database had some testing data and you finally decided to delete them, so you need to delete all records older then `2023-01-01`:
+Your production database had some testing data and you finally decided to delete them, so you need to delete all records older than `2023-01-01`:
 
 ```php
 /**
